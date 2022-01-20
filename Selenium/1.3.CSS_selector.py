@@ -25,3 +25,4 @@ number2 = driver.find_element_by_id('number2')
 number1.send_keys(Keys.NUMPAD1, Keys.NUMPAD6)
 number2.send_keys(14)
 
+# CSS Selector 
