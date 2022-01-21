@@ -1,7 +1,5 @@
 import csv
 
-from matplotlib.pyplot import isinteractive
-
 class Item:
     pay_rate = 0.8 # pay rate after 20% discount 
     all = []
@@ -51,4 +49,3 @@ class Item:
     def __repr__(self):
         return f"Item('{self.name}', {self.price}, {self.quantity})"
 
-print(Item.is_integer(9.6))
