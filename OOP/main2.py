@@ -25,5 +25,3 @@ class Course():
             value += student.get_grade() 
         return value / len(self.students)
 
-
-
