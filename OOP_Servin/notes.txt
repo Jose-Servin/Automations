@@ -1,0 +1,9 @@
+4 Principles of OOP
+    1. Inheritance
+    2. Polymorphism
+    3. Encapsulation
+    4. Abstraction
+
+Classes are used to represent more complex data structures and contain functions that describe their behavior.
+
+Attributes in the def __init__ method are called instance attributes 
