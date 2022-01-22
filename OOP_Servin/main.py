@@ -48,8 +48,8 @@ Employee.motivate(employees)
 print(se1.salary)
 
 karen = Employee('Karen', 50, 4500)
-karen.set_ssn(555555)
-print(karen.get_ssn())
+#karen.set_ssn(555555)
+#print(karen.get_ssn())
 
 se1.code()
 print(se1._log_time)
@@ -58,5 +58,7 @@ print(se1._log_time)
 
 
 m = Employee('m', 50, 8000)
-m.set_ssn(999999)
-print(m.get_ssn())
+m.ssn = 333333
+print(m.ssn)
+#del m.ssn
+print(m.ssn) # returns an error if del statement is ran 

@@ -20,19 +20,18 @@ class Employee:
         for i in employees:
             i.reward()
 
-    # getter
-    def get_ssn(self):
+    @property
+    def ssn(self):
         return self._ssn
 
     # setter (allows us to check value, enforce constraints etc)
-    def set_ssn(self, ssn):
-        self._ssn = self._special_emp(ssn)
+    @ssn.setter
+    def ssn(self, ssn):
+        self._ssn = ssn
 
-    def _special_emp(self, ssn):
-        if ssn <= 555555:
-            print('Special Employee')
-        else:
-            print('Regular Employee')
+    @ssn.deleter
+    def ssn(self):
+        del self._ssn
 
 
 class SoftwareEngineer(Employee):
