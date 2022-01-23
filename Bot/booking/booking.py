@@ -44,3 +44,46 @@ class Booking(webdriver.Chrome):
             'li[data-i="0"]'
         )
         first_result.click()
+
+    def enter_dates(self, check_in, check_out):
+        check_in_date = self.find_element_by_css_selector(
+            f'td[data-date="{check_in}"]'
+        )
+        check_in_date.click()
+
+        check_out_date = self.find_element_by_css_selector(
+            f'td[data-date="{check_out}"]'
+        )
+        check_out_date.click()
+
+    def enter_adults(self, num_adults=None):
+        selection_element = self.find_element_by_id('xp__guests__toggle')
+        selection_element.click()
+
+        # When the number of adults reaches one, exit while loop (safety logic)
+        while True:
+            # Decrease Adult value to its minimum 
+            decrease_button  = self.find_element_by_css_selector(
+                'button[aria-label="Decrease number of Adults"]'
+            )
+            decrease_button.click()
+
+            default_adult_value_element = self.find_element_by_id('group_adults')
+            default_val = default_adult_value_element.get_attribute('value') # recieves a key name and returns value 
+
+            if int(default_val) == 1:
+                break
+
+        
+        increase_button  = self.find_element_by_css_selector(
+            'button[aria-label="Increase number of Adults"]'
+        )
+
+        for _ in range(num_adults-1): #range starts at 0, default is 1 so we subtract 1 to bring it to range start value 
+            increase_button.click()
+
+    def search(self):
+        search_button = self.find_element_by_css_selector(
+            'button[type="submit"]'
+        )
+        search_button.click()
