@@ -7,3 +7,4 @@ with Booking() as bot:
     bot.enter_dates(check_in='2022-01-23', check_out='2022-01-29')
     bot.enter_adults(5)
     bot.search()
+    bot.apply_filtrations()

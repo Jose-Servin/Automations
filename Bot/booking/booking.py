@@ -4,6 +4,7 @@
 import booking.constants as const
 import os 
 from selenium import webdriver
+from booking.booking_filtration import BookingFiltration
 
 # instance object will have methods from both selenium webdriver and any created by us. 
 class Booking(webdriver.Chrome):
@@ -87,3 +88,7 @@ class Booking(webdriver.Chrome):
             'button[type="submit"]'
         )
         search_button.click()
+
+    def apply_filtrations(self):
+        filtration = BookingFiltration(driver=self)
+        filtration.apply_star_filter(star_rating=5)
