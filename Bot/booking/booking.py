@@ -5,6 +5,8 @@ import booking.constants as const
 import os 
 from selenium import webdriver
 from booking.booking_filtration import BookingFiltration
+from booking.booking_report import BookingReport
+from prettytable import PrettyTable
 
 # instance object will have methods from both selenium webdriver and any created by us. 
 class Booking(webdriver.Chrome):
@@ -91,4 +93,18 @@ class Booking(webdriver.Chrome):
 
     def apply_filtrations(self):
         filtration = BookingFiltration(driver=self)
-        filtration.apply_star_filter(star_rating=5)
+        filtration.apply_star_filter(4,5)
+        filtration.sortby_lowest_price()
+
+    def report_results(self):
+        result_boxes = self.find_element_by_id(
+            'search_results_table'
+            )
+        
+        report = BookingReport(result_boxes)
+        table = PrettyTable(
+            field_names=['Hotel Name','Hotel Price']
+        )
+        table.add_rows(report.pull_titles())
+        print(table)
+        #print(report.pull_titles())
