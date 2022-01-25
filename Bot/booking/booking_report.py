@@ -22,9 +22,9 @@ class BookingReport():
             
             hotel_price = deal_box.find_element_by_css_selector('.fde444d7ef._e885fdc12').get_attribute('innerHTML').strip()
 
-            #hotel_rating = deal_box.find_element_by_css_selector('._9c5f726ff.bd528f9ea6').get_attribute('innerHTML').strip()
+            hotel_rating = deal_box.find_element_by_class_name('bd528f9ea6')
 
             master_data.append(
-                [hotel_name, hotel_price]
+                [hotel_name, hotel_price, hotel_rating]
             )
         return master_data

@@ -103,7 +103,7 @@ class Booking(webdriver.Chrome):
         
         report = BookingReport(result_boxes)
         table = PrettyTable(
-            field_names=['Hotel Name','Hotel Price']
+            field_names=['Hotel Name','Hotel Price', 'Hotel Rating']
         )
         table.add_rows(report.pull_titles())
         print(table)
