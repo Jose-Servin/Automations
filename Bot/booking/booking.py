@@ -33,6 +33,7 @@ class Booking(webdriver.Chrome):
         )
         currency_element.click()
 
+        # FINDING ELEMENT THAT MATCHES GIVEN ARGUMENT 
         selected_currency_element = self.find_element_by_css_selector(
             f'a[data-modal-header-async-url-param*="selected_currency={currency}"]'
         )
@@ -40,6 +41,7 @@ class Booking(webdriver.Chrome):
 
     def enter_destination(self, destination=None):
         text_field = self.find_element_by_id('ss')
+        # CLEAR TEXT FIELD BEFORE ENTERING TEXT 
         text_field.clear()
         text_field.send_keys(destination)
 
@@ -62,6 +64,8 @@ class Booking(webdriver.Chrome):
     def enter_adults(self, num_adults=None):
         selection_element = self.find_element_by_id('xp__guests__toggle')
         selection_element.click()
+
+        # HOW TO RESET A COUNT 
 
         # When the number of adults reaches one, exit while loop (safety logic)
         while True:

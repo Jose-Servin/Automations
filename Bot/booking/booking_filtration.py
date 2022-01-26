@@ -11,9 +11,9 @@ class BookingFiltration:
         )
         star_child_elements = star_filtration_box.find_elements_by_css_selector('*')
 
-        for star_rating in star_ratings:
-            for star_element in star_child_elements:
-                if str(star_element.get_attribute('innerHTML')).strip() == f'{star_rating} stars':
+        for star_rating in star_ratings: # iterate through star_ratings given by user
+            for star_element in star_child_elements: #iterate through all child elements in star rating box
+                if str(star_element.get_attribute('innerHTML')).strip() == f'{star_rating} stars': #matching the value of child element with the star_rating given by user
                     star_element.click()
 
     def sortby_lowest_price(self):
