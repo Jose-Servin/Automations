@@ -1,4 +1,8 @@
+from main import Scooter
+from main import ElectricCar
 from main import Car
+from main import Bike
+from main import Skateboard
 
 my_car = Car('sonic grey', 2021, 'Honda', 'Accord')
 my_car.details()
@@ -48,3 +52,53 @@ car3_insurance.rate = 1212
 print(car3_insurance.rate, car3_insurance.company)
 
 my_car3.show_info()
+
+tesla = ElectricCar('Red',2021, 'Tesla','Model Y',120)
+tesla.details()
+ElectricCar.wheels = 4
+print(ElectricCar.wheel_info())
+print(tesla.insurance.company)
+
+tesla.insurance.company = 'DallasInsurance'
+print(tesla.insurance.company)
+
+
+# Creating a Bike instance
+
+mongoose = Bike(22)
+mongoose.check_wheels()
+
+print(mongoose.alloy_wheels)
+
+# Using super method to call parent class function in child class
+tesla.parent_class_year()
+
+
+
+######## DO THIS TO CALL A METHOD FROM ANOTHER CLASS (DUCK TYPING)
+# Create instance of Bike
+bike_instance = Bike(12)
+# create instance of Scooter
+scooter_1 = Scooter()
+# use method in scooter that takes in Bike instance as an argument 
+scooter_1.use_method_from_other_class(bike_instance)
+
+# Create instance of Skateboard 
+skateboard_1 = Skateboard()
+# create instance of Scooter
+scooter_2 = Scooter()
+# use method in Scooter that takes in Object_from_class as an argument
+scooter_2.use_method_from_other_class(skateboard_1)
+
+
+
+### MAGIC METHOD (Learn more about this topic) ###################################################
+my_tesla = ElectricCar('Blue',2021,'Tesla','Model X', 520)
+your_tesla = ElectricCar('Red',2021, 'Tesla','Model Y', 480)
+
+total_kW = my_tesla + your_tesla
+print(total_kW)
+
+### __str__ Magic Method Overloading
+print(my_tesla)
+print(my_car)
