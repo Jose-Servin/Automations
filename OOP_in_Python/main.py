@@ -96,3 +96,25 @@ class Scooter:
 class Skateboard:
     def execute(self):
         print('This is from the Skateboard class ')
+
+
+
+class Calculator:
+    def take_sum(self, num1=None, num2=None, num3=None):
+        total = 0
+        if num1 != None and num2 != None and num3 != None:
+            total = num1 + num2 + num3
+        elif num1 != None and num2 != None:
+            total = num1 + num2
+        else:
+            total = num1
+
+        return total
+
+    def take_sum_args(self, *numbers):
+        total = 0
+        for num in numbers:
+            total += num
+
+        return total 
+

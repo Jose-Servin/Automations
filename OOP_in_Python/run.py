@@ -3,6 +3,7 @@ from main import ElectricCar
 from main import Car
 from main import Bike
 from main import Skateboard
+from main import Calculator
 
 my_car = Car('sonic grey', 2021, 'Honda', 'Accord')
 my_car.details()
@@ -102,3 +103,11 @@ print(total_kW)
 ### __str__ Magic Method Overloading
 print(my_tesla)
 print(my_car)
+
+
+####### METHOD OVERLOADING ############
+cal_1 = Calculator()
+
+print(cal_1.take_sum(4))
+
+print(cal_1.take_sum_args(10,10,10,10,5,5,4))
