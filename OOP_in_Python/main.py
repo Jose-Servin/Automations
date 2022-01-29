@@ -28,7 +28,9 @@ class Car:
     def wheel_info(cls):
         return cls.wheels
     
-    # static methods do not take concern over Class or Instances 
+    # static methods do not take concern over Class or Instances
+    # statis methods can be applied to both Classes and Instances
+    # You cannot use intance attributes as arguments or inside static methods  
     @staticmethod
     def info():
         print('This method has nothing to do with Class or Instances')
