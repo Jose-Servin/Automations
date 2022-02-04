@@ -1,0 +1,6 @@
+first_name,last_name,ID,Department,Salary,bonus,start_date,end_date
+Jose,Servin,100800,Analyst,5000,0.03,1/1/22,
+Mayra,Servin,100500,Sales,5000,0.07,6/1/21,
+Melissa,Servin,101300,HR,4500,0.02,1/16/20,
+Claudia,DonJuan,100224,Analyst,5000,0.03,5/15/19,
+Bella,Cat,100123,Sales,6000,0.08,6/25/18,9/1/21
