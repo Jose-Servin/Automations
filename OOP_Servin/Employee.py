@@ -1,12 +1,13 @@
-import csv 
+import csv
 import pandas as pd
 
+# testing in Pycharm
 class Employee:
 
     all_employees = []
 
     def __init__(self, first_name, last_name, ID, department, salary, bonus, start_date, end_date = None):
-        self.first_name  = first_name
+        self.first_name = first_name
         self.last_name = last_name
         self.ID = ID
         self.department = department
@@ -18,7 +19,7 @@ class Employee:
         Employee.all_employees.append(self)
 
     def total_compensation(self):
-        return self.salary + (self.salary * self.bonus) 
+        return self.salary + (self.salary * self.bonus)
 
     def __str__(self):
         return f""" 
@@ -48,9 +49,6 @@ class Employee:
         
         """
 
-
-
-
     @classmethod
     def instantiate_from_csv(cls):
         with open('/Users/joseservin/Automations/OOP_Servin/employees.csv', 'r') as f:
@@ -62,14 +60,13 @@ class Employee:
                 first_name=item.get('first_name'),
                 last_name=item.get('last_name'),
                 ID=int(item.get('ID')),
-                department= item.get('Department'),
-                salary = int(item.get('Salary')),
-                bonus = float(item.get('bonus')),
-                start_date = pd.to_datetime(item.get('start_date')),
-                end_date = pd.to_datetime(item.get('end_date'))
+                department=item.get('Department'),
+                salary=int(item.get('Salary')),
+                bonus=float(item.get('bonus')),
+                start_date=pd.to_datetime(item.get('start_date')),
+                end_date=pd.to_datetime(item.get('end_date'))
 
             )
-
 
 
 class Analyst(Employee):
@@ -77,6 +74,7 @@ class Analyst(Employee):
         super().__init__(first_name, last_name, ID, department, salary, bonus, start_date, end_date)
 
 class Sales(Employee):
+
     def __init__(self, first_name, last_name, ID, department, salary, bonus, start_date, end_date=None):
         super().__init__(first_name, last_name, ID, department, salary, bonus, start_date, end_date)
 
