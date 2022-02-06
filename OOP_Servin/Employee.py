@@ -1,12 +1,13 @@
 import csv
 import pandas as pd
 
-# testing in Pycharm
-class Employee:
 
+# testing in Pycharm part 2
+
+class Employee:
     all_employees = []
 
-    def __init__(self, first_name, last_name, ID, department, salary, bonus, start_date, end_date = None):
+    def __init__(self, first_name, last_name, ID, department, salary, bonus, start_date, end_date=None):
         self.first_name = first_name
         self.last_name = last_name
         self.ID = ID
@@ -70,15 +71,16 @@ class Employee:
 
 
 class Analyst(Employee):
-    def __init__(self, first_name, last_name, ID, department, salary, bonus, start_date, end_date =  None):
+    def __init__(self, first_name, last_name, ID, department, salary, bonus, start_date, end_date=None):
         super().__init__(first_name, last_name, ID, department, salary, bonus, start_date, end_date)
+
 
 class Sales(Employee):
 
     def __init__(self, first_name, last_name, ID, department, salary, bonus, start_date, end_date=None):
         super().__init__(first_name, last_name, ID, department, salary, bonus, start_date, end_date)
 
+
 class HR(Employee):
     def __init__(self, first_name, last_name, ID, department, salary, bonus, start_date, end_date=None):
         super().__init__(first_name, last_name, ID, department, salary, bonus, start_date, end_date)
-
