@@ -2,6 +2,7 @@ import unittest
 from unittest.mock import patch  # patch can be used as decorator or context manager
 from employee import Employee
 
+# Real world application of unit testing a OOP project
 
 class TestEmployee(unittest.TestCase):
 
