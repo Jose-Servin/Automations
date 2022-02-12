@@ -2,6 +2,7 @@ import unittest
 from unittest.mock import patch  # patch can be used as decorator or context manager
 from employee import Employee
 
+
 # Real world application of unit testing a OOP project
 
 class TestEmployee(unittest.TestCase):
@@ -66,6 +67,7 @@ class TestEmployee(unittest.TestCase):
             schedule = self.emp1.monthly_schedule('April')
             mocked_get.assert_called_with('https://company.com/Servin/April')
             self.assertEqual(schedule, 'Bad Response!')
+
 
 if __name__ == '__main__':
     unittest.main()
